@@ -11,9 +11,11 @@ mongoose.connect(url);
 
 const app = express();
 
+const PORT = process.env.PORT || 8000;
+
 app.use(cors());
 app.use(express.json());
 app.use('/auth', auth);
 app.use('/post', post);
 
-app.listen(8000, () => console.log('Started'));
+app.listen(PORT, () => console.log('Started'));
