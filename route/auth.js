@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.post('/signup', async (req, res) => {
 	try {
-		const { name, emailId, password,role } = req.body;
+		const { name, emailId, password, role } = req.body;
 		if (!(name && emailId && password && role))
 			return res
 				.status(400)
