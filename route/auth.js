@@ -4,8 +4,8 @@ const router = express.Router();
 
 router.post('/signup', async (req, res) => {
 	try {
-		const { name, emailId, password } = req.body;
-		if (!(name && emailId && password))
+		const { name, emailId, password,role } = req.body;
+		if (!(name && emailId && password && role))
 			return res
 				.status(400)
 				.json({ status: false, error: 'Invalid parameters' });
@@ -21,6 +21,7 @@ router.post('/signup', async (req, res) => {
 			name,
 			emailId,
 			password,
+			role,
 		});
 		await user.save();
 
