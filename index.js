@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const auth = require('./route/auth.js');
 const post = require('./route/post.js');
+const profile = require('./route/profile.js');
 
 const url =
 	'mongodb+srv://srk:srk@cluster0.q5jvx.mongodb.net/connect?retryWrites=true&w=majority';
@@ -17,5 +18,6 @@ app.use(cors());
 app.use(express.json());
 app.use('/auth', auth);
 app.use('/post', post);
+app.use('/profile', profile);
 
 app.listen(PORT, () => console.log('Started'));
